@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-define('TEMPLATES_DIR', __DIR__ . '/templates/');
+define('TEMPLATES_DIR', __DIR__ . '/../templates/');
 
 error_reporting(E_ALL);
 
@@ -27,7 +27,7 @@ if ($uri && $uri !== '/') {
 
 function protectedIncludeScope(string $template, array $data)
 {
-    require_once __DIR__ . '/includes/template_functions.php';
+    require_once __DIR__ . '/../includes/template_functions.php';
     extract($data);
     include func_get_arg(0);
 }
