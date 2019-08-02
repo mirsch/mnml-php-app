@@ -16,6 +16,9 @@ if (strpos($uri, '..') !== false) {
 $template = TEMPLATES_DIR . 'home/home.php';
 if ($uri && $uri !== '/') {
     $template = TEMPLATES_DIR . $uri . '.php';
+    if (is_dir(TEMPLATES_DIR . $uri)) {
+        $template = TEMPLATES_DIR . $uri . '/index.php';
+    }
     if (! file_exists($template)) {
         http_response_code(404);
         throw new InvalidArgumentException('Not found.');
