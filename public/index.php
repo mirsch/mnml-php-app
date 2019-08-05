@@ -12,6 +12,10 @@ $uri = $_SERVER['REQUEST_URI'] ?? null;
 if (strpos($uri, '..') !== false) {
     throw new InvalidArgumentException('Invalid Uri');
 }
+// no partials please
+if (strpos($uri, '/partials/') !== false) {
+    throw new InvalidArgumentException('Invalid Uri');
+}
 
 $template = TEMPLATES_DIR . 'home/home.php';
 if ($uri && $uri !== '/') {
