@@ -1,0 +1,52 @@
+{
+  "private": true,
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "docs": "npx kss --verbose --source assets/css --destination dist/assets/styleguide --css ../../dist/css/main.css --title Styles --homepage docs.md --builder node_modules/michelangelo/kss_styleguide/custom-template/",
+    "dev": "npx gulp dev",
+    "lint:css": "npx stylelint assets/css",
+    "lint:js": "npx eslint assets/js",
+    "lint": "npm-run-all --parallel lint:*",
+    "todo": "grep -lir --color --exclude-dir=node_modules --exclude-dir=libs --exclude=package.json 'todo'",
+    "clean": "npx gulp clean",
+    "build": "npm run lint && npx gulp build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.0",
+    "autoprefixer": "*",
+    "babel-eslint": "^10.0.2",
+    "bulma": "^0.7.5",
+    "cssnano": "*",
+    "del": "*",
+    "eslint": "*",
+    "glob": "*",
+    "gulp": "*",
+    "gulp-cssnano": "*",
+    "gulp-imagemin": "*",
+    "gulp-newer": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "*",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "*",
+    "gulp-terser": "^1.2.0",
+    "imagemin": "*",
+    "imagemin-giflossy": "*",
+    "imagemin-mozjpeg": "*",
+    "imagemin-pngquant": "*",
+    "imagemin-svgo": "*",
+    "imagemin-zopfli": "*",
+    "kss": "*",
+    "michelangelo": "*",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "*",
+    "postcss": "*",
+    "postcss-cli": "^6.1.3",
+    "postcss-easy-import": "*",
+    "postcss-media-variables": "*",
+    "postcss-nested": "*",
+    "stylelint": "*"
+  }
+}
